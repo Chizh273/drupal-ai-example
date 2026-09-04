@@ -1,0 +1,22 @@
+uuid: 6abbee60-e6dd-43ad-b02c-6da3f7691fd0
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.restricted_html
+  module:
+    - ai_chatbot
+    - filter
+    - media
+    - system
+_core:
+  default_config_hash: Tus1ZTNXKIOnrennR1hnTbc7wUPBXHTUm5UdCpEhJSk
+id: anonymous
+label: 'Anonymous user'
+weight: 0
+is_admin: false
+permissions:
+  - 'access content'
+  - 'access deepchat api'
+  - 'use text format restricted_html'
+  - 'view media'

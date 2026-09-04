@@ -1,0 +1,39 @@
+uuid: a8044414-31b6-4be7-b52c-7f9eb3f4bcb7
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.tags
+  module:
+    - ai_agents_explorer
+    - ai_ckeditor
+    - contextual
+    - file
+    - navigation
+    - node
+    - path
+    - system
+    - taxonomy
+_core:
+  default_config_hash: og55Zu0F-q-X8zG0Ohrls49zws6IrmmosZS-30Es8vw
+id: content_editor
+label: 'Content editor'
+weight: 2
+is_admin: false
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access files overview'
+  - 'access navigation'
+  - 'administer url aliases'
+  - 'create terms in tags'
+  - 'create url aliases'
+  - 'delete own files'
+  - 'edit terms in tags'
+  - 'revert all revisions'
+  - 'use ai ckeditor'
+  - 'use the agent explorer'
+  - 'view all revisions'
+  - 'view own unpublished content'
+  - 'view the administration theme'

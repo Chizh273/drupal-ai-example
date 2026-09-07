@@ -1,0 +1,7 @@
+name: 'AI Example Tools'
+type: module
+description: 'Demo AI Function Call plugin exposing site content to the AI Assistant, for the Drupal AI presentation example.'
+package: 'AI'
+core_version_requirement: ^10 || ^11
+dependencies:
+  - drupal:ai

@@ -1,0 +1,8 @@
+index_id: drupal_ai_example_content
+indexing_options:
+  title:
+    indexing_option: contextual_content
+    max: -1
+  body:
+    indexing_option: main_content
+    max: -1

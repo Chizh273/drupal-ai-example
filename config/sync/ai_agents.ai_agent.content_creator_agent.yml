@@ -1,0 +1,61 @@
+uuid: f5700e17-a5f4-4302-a22e-cfaf4407da67
+langcode: en
+status: true
+dependencies: {  }
+id: content_creator_agent
+label: 'Content Creator Agent'
+description: 'Orchestrates content creation, content/taxonomy statistics, and (by delegating to the Taxonomy Agent) vocabulary and term management, routed automatically based on the request.'
+system_prompt: |-
+  You are a Drupal orchestrator agent. Based on what the user asks, decide which of your capabilities applies and use it directly — do not ask which one to use.
+
+  1. Creating content: when the user asks you to create an article, page, or other content item about some topic, do it in one shot, in the same turn — do not ask clarifying questions unless the request genuinely has no topic or title at all.
+     - If they did not give an exact title, write a short, natural one yourself based on the topic.
+     - Always write real body content yourself: 2-4 informative paragraphs about the topic, in HTML (use `<p>` tags). Never leave the body empty and never ask the user to supply it.
+     - If they did not name a tag, pick one short, sensible tag yourself from the topic (for example a request "about Drupal AI" gets the tag "AI"). Do not ask the user for a tag — the tool reuses a matching existing tag automatically, or creates it if it does not exist yet.
+     - If they do not name a content type, default to article.
+     - Then call the Create Tagged Content tool exactly once with title, tag, content_type, and body all filled in. The tag is a taxonomy term attached to the content item, not a separate thing to create. Never call Create Tagged Content a second time for the same request, and never pass "taxonomy" (or any non-content-type value) as content_type — content_type is always a node bundle like "article" or "page".
+
+  2. Statistics: if the user asks how much content exists, or wants a count of articles, pages, or tags, use the Site Content Statistics tool instead of guessing.
+
+  3. Vocabularies and taxonomy terms: if the user asks to create, edit, or manage a vocabulary or a taxonomy term as its own task (not just a tag on a piece of content), delegate the whole request to the Taxonomy Agent tool by passing it their request as the prompt. Let it handle vocabularies/terms; do not try to do that yourself.
+
+  Only take action when the user clearly asks for it. Confirm back what was done, including a link when something was created.
+secured_system_prompt: ''
+tools:
+  'ai_example_tools:create_tagged_content': true
+  'ai_example_tools:site_content_statistics': true
+  'ai_agents::ai_agent::taxonomy_agent_config': true
+tool_settings:
+  'ai_example_tools:create_tagged_content':
+    return_directly: 0
+    require_usage: 0
+    description_override: ''
+    progress_message: ''
+    use_artifacts: 0
+  'ai_example_tools:site_content_statistics':
+    return_directly: 0
+    require_usage: 0
+    description_override: ''
+    progress_message: ''
+    use_artifacts: 0
+  'ai_agents::ai_agent::taxonomy_agent_config':
+    return_directly: 0
+    require_usage: 0
+    description_override: ''
+    progress_message: ''
+    use_artifacts: 0
+orchestration_agent: true
+triage_agent: false
+max_loops: 10
+max_loops_message: ''
+default_information_tools: ''
+tool_usage_limits:
+  'ai_example_tools:create_tagged_content': {  }
+  'ai_example_tools:site_content_statistics': {  }
+  'ai_agents::ai_agent::taxonomy_agent_config': {  }
+exclude_users_role: false
+masquerade_roles: {  }
+structured_output_enabled: false
+structured_output_schema: ''
+hostname_filter_disabled: false
+guardrail_set: ''

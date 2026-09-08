@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 9842ccf1-fcce-42b3-9a91-6737a161494d
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 0
+  filename:
+    -
+      value: case-study-healthcare.png
+  uri:
+    -
+      value: 'public://case-study-healthcare.png'
+  filemime:
+    -
+      value: image/png
+  filesize:
+    -
+      value: 1981
+  status:
+    -
+      value: true

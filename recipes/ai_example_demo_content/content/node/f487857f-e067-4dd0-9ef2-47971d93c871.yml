@@ -1,0 +1,42 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: f487857f-e067-4dd0-9ef2-47971d93c871
+  bundle: faq
+  default_langcode: en
+  depends:
+    25f1635c-6ee6-4060-b5ed-cb372ddeac1b: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 0
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: 'How much does it cost to run an AI assistant on Drupal?'
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  body:
+    -
+      value: 'Drupal itself adds no licensing cost; you pay your chosen LLM provider (OpenAI, Anthropic, etc.) per request/token, plus a vector database provider like Pinecone if you use RAG search. Costs scale with usage, not with the number of contrib modules installed.'
+      format: basic_html
+      summary: ''
+  field_faq_category:
+    -
+      entity: 25f1635c-6ee6-4060-b5ed-cb372ddeac1b

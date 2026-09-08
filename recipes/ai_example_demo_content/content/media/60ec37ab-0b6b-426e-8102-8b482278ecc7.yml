@@ -1,0 +1,32 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 60ec37ab-0b6b-426e-8102-8b482278ecc7
+  bundle: image
+  default_langcode: en
+  depends:
+    72338b36-b159-4e0d-9f69-526b53101237: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: case-study-retail.png
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  field_media_image:
+    -
+      alt: 'Retail search case study cover image'
+      title: ''
+      width: 640
+      height: 360
+      entity: 72338b36-b159-4e0d-9f69-526b53101237

@@ -1,0 +1,7 @@
+name: 'AI example demo content'
+description: 'Sample content for the drupal_ai_example presentation demo: Case Study and FAQ nodes, and Industries/FAQ Categories taxonomy terms with image media. Structure (content types, fields, taxonomies, module enablement) is not part of this recipe — it lives in config/sync like the rest of the site and must already be imported (`drush cim`) before applying this recipe.'
+type: 'Content'
+install:
+  - node
+  - taxonomy
+  - media

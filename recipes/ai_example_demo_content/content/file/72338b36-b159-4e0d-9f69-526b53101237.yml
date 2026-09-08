@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 72338b36-b159-4e0d-9f69-526b53101237
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 0
+  filename:
+    -
+      value: case-study-retail.png
+  uri:
+    -
+      value: 'public://case-study-retail.png'
+  filemime:
+    -
+      value: image/png
+  filesize:
+    -
+      value: 1980
+  status:
+    -
+      value: true

@@ -1,0 +1,42 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 345a62b9-90b9-4003-a392-3f15e11093ad
+  bundle: faq
+  default_langcode: en
+  depends:
+    1bdbf908-0217-4bd6-82ae-8a3499481a98: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 0
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: 'Why does native tool-calling sometimes fail to return results in ai_assistant_api?'
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  body:
+    -
+      value: "As of ai_assistant_api 1.4.8, native tool-calling (use_function_calling: true) builds its tool schema through the AiAssistantAction plugin manager but decodes the model's tool-call response through a different, generic plugin manager, so results never wire back to the conversation. The documented workaround is to disable native function calling and use the prompt-based JSON action protocol instead (use_function_calling: false), which this project's Site Assistant does."
+      format: basic_html
+      summary: ''
+  field_faq_category:
+    -
+      entity: 1bdbf908-0217-4bd6-82ae-8a3499481a98

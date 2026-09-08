@@ -1,0 +1,32 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 375c4944-8068-4bdf-9f8a-450a6b23f1ec
+  bundle: image
+  default_langcode: en
+  depends:
+    84ca222f-0c1e-4030-bb2f-ada4e590b9b5: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  name:
+    -
+      value: case-study-manufacturing.png
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  field_media_image:
+    -
+      alt: 'Manufacturing case study cover image'
+      title: ''
+      width: 640
+      height: 360
+      entity: 84ca222f-0c1e-4030-bb2f-ada4e590b9b5

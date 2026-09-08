@@ -1,0 +1,46 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: b8f2557a-4837-4944-bc97-676db8ac4e2e
+  bundle: case_study
+  default_langcode: en
+  depends:
+    60ec37ab-0b6b-426e-8102-8b482278ecc7: media
+    6ef3bf50-2c1b-4ab0-aaa5-bd16d119365e: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 0
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: 'Bilingual Voice Search for a Retail Product Catalog'
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  body:
+    -
+      value: 'An e-commerce retailer serving English and Arabic-speaking customers needed voice-driven product search across a 40,000-SKU catalog. The solution combined the browser Web Speech API for speech-to-text with a Drupal-native RAG pipeline: ai_search chunks and embeds product descriptions, ai_vdb_provider_pinecone stores the vectors, and ai_assistant_api answers using retrieved context before the browser speaks the response back via text-to-speech. Roughly 80% of the original RFP requirements were met through contrib configuration alone, with under 150 lines of custom JavaScript for the microphone button and audio playback.'
+      format: basic_html
+      summary: ''
+  field_case_study_image:
+    -
+      entity: 60ec37ab-0b6b-426e-8102-8b482278ecc7
+  field_industry:
+    -
+      entity: 6ef3bf50-2c1b-4ab0-aaa5-bd16d119365e

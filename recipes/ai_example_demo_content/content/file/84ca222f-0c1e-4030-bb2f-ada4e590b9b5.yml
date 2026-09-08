@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 84ca222f-0c1e-4030-bb2f-ada4e590b9b5
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 0
+  filename:
+    -
+      value: case-study-manufacturing.png
+  uri:
+    -
+      value: 'public://case-study-manufacturing.png'
+  filemime:
+    -
+      value: image/png
+  filesize:
+    -
+      value: 1993
+  status:
+    -
+      value: true

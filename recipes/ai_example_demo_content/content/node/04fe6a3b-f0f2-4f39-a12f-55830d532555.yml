@@ -1,0 +1,46 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 04fe6a3b-f0f2-4f39-a12f-55830d532555
+  bundle: case_study
+  default_langcode: en
+  depends:
+    5a20b3e9-8912-46aa-a95c-d97a76218c2f: media
+    4aaac9e9-e76f-45c2-83ea-c51a6139950e: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 0
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: 'Digital Signage AI Assistant for Hospital Wayfinding'
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  body:
+    -
+      value: 'A regional hospital network replaced static wayfinding kiosks with a conversational AI assistant built on Drupal. Visitors ask natural-language questions like "where is radiology" or "when does the cafeteria open" and get instant, accurate answers pulled from live Drupal content. The assistant also handles device-level actions: restarting a frozen kiosk, redeploying a layout to a specific floor, or scheduling a maintenance window, all through custom AiFunctionCall tools. Built with drupal/ai, ai_agents for adaptive multi-step troubleshooting, and a lightweight Node.js proxy only where token-streaming ergonomics mattered.'
+      format: basic_html
+      summary: ''
+  field_case_study_image:
+    -
+      entity: 5a20b3e9-8912-46aa-a95c-d97a76218c2f
+  field_industry:
+    -
+      entity: 4aaac9e9-e76f-45c2-83ea-c51a6139950e

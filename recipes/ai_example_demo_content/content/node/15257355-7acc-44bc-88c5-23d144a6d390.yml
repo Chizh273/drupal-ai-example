@@ -1,0 +1,42 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 15257355-7acc-44bc-88c5-23d144a6d390
+  bundle: faq
+  default_langcode: en
+  depends:
+    013d5851-7fbf-4c1c-bc26-a55a321c8fdc: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 0
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: 'Do I need a separate microservice to add AI features to my Drupal site?'
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  body:
+    -
+      value: "Usually not. The drupal/ai ecosystem covers most standard use cases (chat assistants, RAG search, editorial AI tools, text-to-action agents) through configuration and light custom tool plugins. A dedicated Node.js or Python microservice is worth the added complexity mainly when you need true token-streaming ergonomics or full frontend framework freedom, both real trade-offs documented in this project's case studies."
+      format: basic_html
+      summary: ''
+  field_faq_category:
+    -
+      entity: 013d5851-7fbf-4c1c-bc26-a55a321c8fdc

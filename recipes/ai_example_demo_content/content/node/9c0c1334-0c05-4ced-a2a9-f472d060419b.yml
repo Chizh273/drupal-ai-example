@@ -1,0 +1,46 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 9c0c1334-0c05-4ced-a2a9-f472d060419b
+  bundle: case_study
+  default_langcode: en
+  depends:
+    375c4944-8068-4bdf-9f8a-450a6b23f1ec: media
+    d139ba6b-7689-41e3-9f60-47fe4570aeab: taxonomy_term
+default:
+  revision_uid:
+    -
+      target_id: 0
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 0
+  title:
+    -
+      value: 'Predictive Maintenance Chatbot for Factory Floor Technicians'
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      langcode: en
+      alias: null
+  body:
+    -
+      value: 'A manufacturing operator built a Drupal-based chatbot letting floor technicians ask equipment-specific questions and log maintenance actions hands-free. The assistant uses a custom AiFunctionCall tool to query equipment records and open work orders, and the ai_context Context Control Center injects safety-procedure context so answers always include the correct lockout-tagout warnings for the equipment being discussed, a concrete example of governance changing model output, not just a policy document.'
+      format: basic_html
+      summary: ''
+  field_case_study_image:
+    -
+      entity: 375c4944-8068-4bdf-9f8a-450a6b23f1ec
+  field_industry:
+    -
+      entity: d139ba6b-7689-41e3-9f60-47fe4570aeab

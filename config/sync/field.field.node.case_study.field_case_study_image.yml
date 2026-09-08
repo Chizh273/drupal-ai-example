@@ -1,0 +1,24 @@
+uuid: 9609aeff-b047-4127-a4ba-29f9062cf5e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_case_study_image
+    - media.type.image
+    - node.type.case_study
+id: node.case_study.field_case_study_image
+field_name: field_case_study_image
+entity_type: node
+bundle: case_study
+label: Image
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+field_type: entity_reference

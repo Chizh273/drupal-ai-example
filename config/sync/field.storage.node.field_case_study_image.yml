@@ -1,0 +1,20 @@
+uuid: dbf1b514-3406-4d29-a3a4-9c26a267199f
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - node
+id: node.field_case_study_image
+field_name: field_case_study_image
+entity_type: node
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

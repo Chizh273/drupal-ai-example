@@ -1,0 +1,11 @@
+uuid: dc42d470-366a-402a-8dfb-0f64d44233b6
+langcode: en
+status: true
+dependencies: {  }
+name: 'Case Study'
+type: case_study
+description: null
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

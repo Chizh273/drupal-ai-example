@@ -1,0 +1,48 @@
+uuid: 6a7a0430-8874-4a1f-8127-a0f22db1b023
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.case_study.body
+    - field.field.node.case_study.field_case_study_image
+    - field.field.node.case_study.field_industry
+    - node.type.case_study
+  module:
+    - text
+    - user
+id: node.case_study.default
+targetEntityType: node
+bundle: case_study
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_case_study_image:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_industry:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  search_api_excerpt: true

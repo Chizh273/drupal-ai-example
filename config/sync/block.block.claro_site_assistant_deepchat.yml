@@ -1,20 +1,19 @@
-uuid: cede3ec9-2b0d-4730-9232-c879ca57b936
 langcode: en
 status: true
 dependencies:
   module:
     - ai_chatbot
   theme:
-    - olivero
-id: olivero_site_assistant_deepchat
-theme: olivero
+    - claro
+id: claro_site_assistant_deepchat
+theme: claro
 region: content
 weight: -5
 provider: null
 plugin: ai_deepchat_block
 settings:
   id: ai_deepchat_block
-  label: 'Site Assistant Chat'
+  label: 'Site Assistant Chat (Admin)'
   label_display: '0'
   provider: ai_chatbot
   ai_assistant: site_assistant

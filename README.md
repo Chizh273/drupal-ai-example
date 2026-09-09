@@ -16,18 +16,18 @@ Everything below this section is also in the repo and still fully working, but i
 
 ## Everything built here (pillars + extras)
 
-| Feature | Module(s) |
-|---|---|
-| Drupal 11 scaffold | — |
-| Secrets from env vars | `key` |
-| LLM provider | `ai`, `ai_provider_openai` |
-| Chat assistant + widget | `ai_assistant_api`, `ai_chatbot` |
-| Custom callable tool | `ai_example_tools` (custom) |
-| RAG over content | `ai_search`, `ai_vdb_provider_pinecone` |
-| AI editor button | `ai_ckeditor` |
-| Text-to-action agent | `ai_agents`, `ai_agents_explorer` |
-| Context/governance layer | `ai_context` |
-| Demo content (types/taxonomies/media) | `media` |
+| Feature                               | Module(s)                               |
+|---------------------------------------|-----------------------------------------|
+| Drupal 11 scaffold                    | —                                       |
+| Secrets from env vars                 | `key`                                   |
+| LLM provider                          | `ai`, `ai_provider_openai`              |
+| Chat assistant + widget               | `ai_assistant_api`, `ai_chatbot`        |
+| Custom callable tool                  | `ai_example_tools` (custom)             |
+| RAG over content                      | `ai_search`, `ai_vdb_provider_pinecone` |
+| AI editor button                      | `ai_ckeditor`                           |
+| Text-to-action agent                  | `ai_agents`, `ai_agents_explorer`       |
+| Context/governance layer              | `ai_context`                            |
+| Demo content (types/taxonomies/media) | `media`                                 |
 
 The site runs two stock Deep Chat widgets, split by theme:
 
@@ -84,12 +84,12 @@ ddev drush recipe:apply recipes/ai_example_demo_content -y
 
 - **AI Agent Explorer** (`/admin/config/ai/agents/explore`) — pick "Taxonomy Agent", ask it to create a vocabulary or add terms. Real text-to-action: it edits the database, not just chat text.
 - **CKEditor Summarize** — edit any Article/Page body, select text, use the "AI Assistant" toolbar button → Summarize.
-- **Context Control Center** (`/admin/config/ai/context/items`) — one context item is live (a taxonomy style-guide rule). Ask the Taxonomy Agent to add a term and check its description — it will be prefixed `"For the presentation:"`, proving the injected context actually changed the output.
+- **Context Control Center** (`/admin/config/ai/context/items`) — one context item ships with the demo content recipe (a taxonomy style-guide rule, global scope). It's wired to the Taxonomy Agent under `/admin/config/ai/context/settings/agents`, but as of `ai_context` 1.0-beta this injection never actually reaches an `ai_agents` agent run — demonstrable only through the Site Assistant / Public Assistant chat widgets, not via the AI Agent Explorer.
 - **Case Study / FAQ content** — two custom content types with real sample content (`drush recipe:apply recipes/ai_example_demo_content`), indexed into the same Pinecone vector index as everything else with zero extra config: the `ai_search` `indexing_options` are keyed by field name, not bundle, so new bundles sharing the standard `body`/`title` fields are picked up automatically.
 
 ## Custom code
 
 - `web/modules/custom/ai_example_tools/` — one `AiAssistantAction` plugin (`ListRecentContent`) exposing a read-only node query as a tool either assistant can call, plus two generic `AiFunctionCall` plugins for `ai_agents`/`ai_search`: `CreateTaggedContent` (creates a content item with a title and a taxonomy tag, discovering the target bundle's taxonomy-reference field dynamically and reusing an existing term by name instead of duplicating it) and `SiteContentStatistics` (reports real content/taxonomy counts, optionally scoped to one content type — a read-only tool so the model reports a real number instead of guessing one). `CreateTaggedContent` needed a taxonomy field on Article to demo against — added `field_tags` (entity reference to the pre-existing, previously-unused `tags` vocabulary).
-- `recipes/ai_example_demo_content/` — a Drupal recipe shipping the actual demo **content**: Case Study/FAQ nodes, Industries/FAQ Categories taxonomy terms, and image media, exported with `drush content:export --with-dependencies` into the core `content/<entity_type>/<uuid>.yml` format. It ships no config at all — the content types/fields/taxonomies/module-enablement those entities depend on live in `config/sync` like the rest of the site (`drush cim`) and must already be applied first. Reapplying the recipe is idempotent (matched by UUID, no duplicates).
+- `recipes/ai_example_demo_content/` — a Drupal recipe shipping the actual demo **content**: Case Study/FAQ nodes, Industries/FAQ Categories taxonomy terms, image media, and one AI Context Item (the taxonomy style-guide rule), exported with `drush content:export --with-dependencies` into the core `content/<entity_type>/<uuid>.yml` format. It ships no config at all — the content types/fields/taxonomies/module-enablement those entities depend on live in `config/sync` like the rest of the site (`drush cim`) and must already be applied first. Reapplying the recipe is idempotent (matched by UUID, no duplicates). The context item's Global scope doesn't round-trip through `drush content:export` (exports as an empty map), so it needs re-toggling by hand after applying, or the item is silently never selected for injection.
 
 Everything else in this project is configuration.

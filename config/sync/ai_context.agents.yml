@@ -1,3 +1,12 @@
 _core:
   default_config_hash: x6RSyMWd1iQYhYS3zBLWYbRgqKfghEjz5rbA025_uJo
-agents: {  }
+agents:
+  -
+    id: taxonomy_agent_config
+    always_include: {  }
+    never_include: {  }
+    loop_aware: false
+    allow_context_injection: true
+    scope_subscriptions:
+      entity_type:
+        - 'taxonomy_term:industries'

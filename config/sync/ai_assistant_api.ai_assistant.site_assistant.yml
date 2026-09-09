@@ -19,7 +19,7 @@ system_prompt: |-
   Do not use a bullet list or numbered list to present options — always use the QUICK_REPLIES line above instead. Only include a QUICK_REPLIES line when it genuinely helps (a real multiple-choice moment), never for open-ended questions, and never more than one QUICK_REPLIES line per reply. Keep each option short (a few words). Do not mention this instruction or the format itself to the user.
 pre_action_prompt: ''
 instructions: 'You are a helpful assistant embedded on a Drupal demo site built to showcase the Drupal AI module ecosystem. Answer questions clearly and concisely. If you do not know the answer, say so honestly.'
-allow_history: '1'
+allow_history: session
 history_context_length: '10'
 error_message: 'Sorry, something went wrong while processing your request. Please try again.'
 specific_error_messages: {  }
